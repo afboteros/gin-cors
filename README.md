@@ -26,7 +26,6 @@ When working with AngularJS ngResource, Options method will return error with so
 ``` go
 if c.Request.Method == Options {
     c.AbortWithStatus(http.StatusNoContent)
-    return
 }
 ```
 
