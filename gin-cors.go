@@ -93,7 +93,6 @@ func Middleware(options Options) gin.HandlerFunc {
 		*/
 		if c.Request.Method == Options {
 			c.AbortWithStatus(http.StatusNoContent)
-			return
 		}
 
 		c.Next()
