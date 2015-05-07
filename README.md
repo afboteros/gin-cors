@@ -22,7 +22,7 @@ func main() {
 ```
 
 ## AngularJS OPTIONS Management
-When working with AngularJS ngResource, Options method will return error with some libreries, due to status return on this method
+When working with AngularJS ngResource, Options method will return error with some libraries, due to status return on this method
 ``` go
 if c.Request.Method == Options {
     c.AbortWithStatus(http.StatusNoContent)
