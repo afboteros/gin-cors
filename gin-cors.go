@@ -67,19 +67,19 @@ func Middleware(options Options) gin.HandlerFunc {
 		if len(options.AllowOrigins) > 0 {
 			c.Writer.Header().Set("Access-Control-Allow-Origin", strings.Join(options.AllowOrigins, " "))
 		} else {
-			c.Writer.Header().Set("Access-Control-Allow-Origin", options.AllowOrigins)
+			c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
 		}
 
 		if len(options.AllowHeaders) > 0 {
 			c.Writer.Header().Set("Access-Control-Allow-Headers", strings.Join(options.AllowHeaders, ","))
 		} else {
-			c.Writer.Header().Set("Access-Control-Allow-Headers", options.AllowHeaders)
+			c.Writer.Header().Set("Access-Control-Allow-Headers", strings.Join(defaultAllowHeaders, ","))
 		}
 
 		if len(options.AllowMethods) > 0 {
 			c.Writer.Header().Set("Access-Control-Allow-Methods", strings.Join(options.AllowMethods, ","))
 		} else {
-			c.Writer.Header().Set("Access-Control-Allow-Methods", options.AllowMethods)
+			c.Writer.Header().Set("Access-Control-Allow-Methods", strings.Join(defaultAllowMethods, ","))
 		}
 
 		if options.AllowCredentials {
